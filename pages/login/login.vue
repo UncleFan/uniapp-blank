@@ -1,8 +1,20 @@
 <template>
 	<view class="login">
 		<Navigator :name="navigatorName" :showback="showback"></Navigator>
-		<text class="title">{{title}} </text>
-		<input type="text" :value="title" @input="changeTitle"/>
+		<view class="headico">
+			<image src="../../static/logo.png" mode="aspectFill"></image>
+		</view>
+		
+		<view class="form">
+			<Input :inputType="'icon-user'"></Input>
+		</view>
+		
+		<!-- <text class="title">{{title}} </text>
+		<input type="text" :value="title" @input="changeTitle"/> -->
+		
+		
+		
+		<!-- <Tabbar></Tabbar> -->
 	</view>
 </template>
 
@@ -10,23 +22,29 @@
 	import $http from '../../utils/api'
 	import requestUrl from '../../utils/requestUrl'
 	
-	import  Navigator from '../../components/navigator'
-
+	import Navigator from '../../components/navigator'
+	import Input from '../../components/input'
+	
+	
+	import { tabbar,getPagesPath } from '../../utils/tabbar'
+	
 	export default {
 		data() {
 			return {
 				title: '我是这个登录页面',
 				navigatorName: '登录',  // 传值下个页面的名称
-				showback: true // 是否显示返回按钮
+				showback: false, // 是否显示返回按钮
+				showTabbar: false
 			}
 		},
 		
 		components: {
-			Navigator
+			Navigator,
+			Input
 		},
 
-		onLoad() {
-			console.log(navigator)
+		onLoad(e) {
+			getPagesPath()
 			/* $http.ReqPost(requestUrl.newsList,{}).then((res) => {
 				// console.log(res)
 			}).catch(e => {
@@ -76,6 +94,24 @@
 		height: calc(100vh);
 		background: url('../../static/denglubg.jpg') no-repeat;
 		background-size: cover;
+	}
+	
+	.headico{
+		padding: 10% 0 0 0;
+		display: flex;
+		justify-content: center;
+		
+		image{
+			width: 160upx;
+			height: 160upx;
+			border-radius: @radius-circle;
+			border: 2upx solid #85bbbd;
+		}
+	}
+	
+	.form{
+		padding: 60upx 0;
+		vertical-align: baseline;
 	}
 
 </style>

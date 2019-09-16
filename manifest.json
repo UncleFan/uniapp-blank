@@ -73,5 +73,13 @@
     },
     "mp-toutiao" : {
         "usingComponents" : true
+    },
+    "h5" : {
+        "router" : {
+            "mode" : "history"
+        },
+        "devServer" : {
+            "https" : false
+        }
     }
 }

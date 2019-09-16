@@ -60,19 +60,6 @@ fly.interceptors.response.use((response) => {
 	console.log(error)
 })
 
-
-// 返回登录页面
-function backToLogin() {
-	uni.redirectTo({
-		url: '/pages/login/login'
-	})
-}
-
-function throwError(e){
-	throw new Error(e);
-}
-
-
 export default {
 	fly
 }

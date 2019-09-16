@@ -24,8 +24,8 @@
 			/* // 组件属性值获取
 			console.log(this.name)
 			console.log(this.$props.name) */
-			console.log("created=============>start")
-			console.log("created=============>end")
+			// console.log("created=============>start")
+			// console.log("created=============>end")
 		},
 		
 		methods: {
@@ -41,7 +41,7 @@
 
 <style lang="less" scoped>
 	@import url('../common/theme.less');
-	@import url('//at.alicdn.com/t/font_1306196_h4nhsho67q6.css');
+	@import url('//at.alicdn.com/t/font_1355568_2q9vzas3kwg.css');
 	
 	.navigator{
 		width: 100%;

@@ -4,22 +4,25 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
+		<Tabbar></Tabbar>
 	</view>
 </template>
 
 <script>
+	import { tabbar,getPagesPath } from '../../utils/tabbar' 
+	import Tabbar from '../../components/tabbar'
 	export default {
 		data() {
 			return {
 				title: 'Hello'
 			}
 		},
+		components:{
+			Tabbar
+		},
 		onLoad() {
-			// uni.navigateTo({
-			//     url: '../login/login',
-			//     animationType: 'pop-in',
-			//     animationDuration: 100
-			// });
+			getPagesPath()
+			// console.log(tabbar)
 		},
 		methods: {
 			toLogin(){
