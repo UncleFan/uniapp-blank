@@ -1,0 +1,34 @@
+@import url(//at.alicdn.com/t/font_1355568_2q9vzas3kwg.css);
+
+/* Border Radius */
+.icon-user.data-v-03161025 {
+  font-size: 50rpx;
+  color: #979797;
+  padding: 0 10rpx;
+}
+.input.data-v-03161025 {
+  width: 650rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #FFF;
+  border-radius: 12rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.input input.data-v-03161025 {
+  font-size: 28rpx;
+  line-height: 90rpx;
+}
+

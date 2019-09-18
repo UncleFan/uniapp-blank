@@ -1,0 +1,1 @@
+<view class="navigator data-v-7132bab2"><block wx:if="{{showback}}"><view data-event-opts="{{[['tap',[['navigatorBack',['$event']]]]]}}" class="backIcon data-v-7132bab2" bindtap="__e"><view class="iconfont icon-xiangzuo _b data-v-7132bab2"></view></view></block><view class="navigator-name data-v-7132bab2">{{name}}</view></view>

@@ -1,0 +1,56 @@
+/* Border Radius */
+.tabbar.data-v-c1b66cda {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(7vh);
+  background-color: #FFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.tabbar .tab-wrap.data-v-c1b66cda {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.tabbar .tab-wrap image.data-v-c1b66cda {
+  width: 50rpx;
+  height: 50rpx;
+}
+.tabbar .tab-wrap text.data-v-c1b66cda {
+  font-size: 16rpx;
+  color: #979797;
+}
+.tabbar .tab-wrap text.choosed.data-v-c1b66cda {
+  color: #b4272d;
+}
+

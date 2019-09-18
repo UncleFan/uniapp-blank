@@ -32,7 +32,6 @@ const mutations = {
 	changeToken(state,token){
 		setTimeout(()=>{
 			state.token = token;
-			console.log(state)
 		},2000)
 	},
 	addAge(state){

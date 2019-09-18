@@ -1,0 +1,67 @@
+@import url(//at.alicdn.com/t/font_1355568_2q9vzas3kwg.css);
+
+/* Border Radius */
+.code.data-v-6e2dc2e2 {
+  width: 650rpx;
+  height: 90rpx;
+  margin: 36rpx auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #FFF;
+  border-radius: 12rpx;
+}
+.code .input.data-v-6e2dc2e2 {
+  width: 360rpx;
+}
+.code .input input.data-v-6e2dc2e2 {
+  font-size: 28rpx;
+  line-height: 90rpx;
+  padding-left: 5rpx;
+}
+.code .codeBtn.data-v-6e2dc2e2 {
+  width: 224rpx;
+  height: 90rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.code .codeBtn text.data-v-6e2dc2e2 {
+  width: 100%;
+  font-size: 28rpx;
+  color: #b4272d;
+  text-align: center;
+  border-left: 1rpx solid rgba(180, 39, 45, 0.8);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  opacity: 0.8;
+}
+.iconfont.icon-password.data-v-6e2dc2e2 {
+  font-size: 36rpx;
+  color: #979797;
+  padding: 0 10rpx 0 20rpx;
+}
+.code input.data-v-6e2dc2e2 {
+  font-size: 28rpx;
+}
+

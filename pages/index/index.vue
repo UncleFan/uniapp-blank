@@ -1,9 +1,33 @@
 <template>
 	<view class="content">
-		<view>{{avatarUrl}}</view>
-		<button type="primary" size="small" @tap="changeToken">获取token: {{tokens}}</button>
-		<button type="warn" size="small" @tap="addAge">增加后的年龄为：{{age}}</button>
-		<Tabbar></Tabbar>
+		<view class="header">
+			<view class="searchbar">
+				<text class="iconfont icon-sousuo"></text>
+				<input type="text" :value="search" placeholder="输入商品关键词"/>
+			</view>
+			<view class="swiper-container">
+				<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="500">
+					<swiper-item v-for="(item,index) in swipers" :key="index">
+						<image class="swiper-img" :src="item" ></image>
+					</swiper-item>
+				</swiper>
+			</view>
+		</view>
+		<view class="cells">
+			<view class="cells-top">
+				<view class="cell" v-for="(item,index) in cells.top" :key="index">
+					<image :src="item.src" mode=""></image>
+					<text>{{item.name}}</text>
+				</view>
+			</view>
+			<view class="cells-bottom">
+				<view class="cell" v-for="(item,index) in cells.bottom" :key="index">
+					<image :src="item.src" mode=""></image>
+					<text>{{item.name}}</text>
+				</view>
+			</view>
+			<view class="line"></view>
+		</view>
 	</view>
 </template>
 
@@ -17,7 +41,57 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				search: '',
+				swipers: [
+					"https://image.sqqmall.com/2019/08/28/072d49e2a53af5b0.png",
+					"https://image.sqqmall.com/2019/08/28/072d49e2a53af5b0.png"
+				],
+				cells: {
+					top: [
+						{
+							src: 'https://image.sqqmall.com/2019/06/04/8d3adaf4c25e4651.png',
+							name: '游戏/动漫'
+						},
+						{
+							src: 'https://image.sqqmall.com/2019/06/04/32bac761aaa8145c.png',
+							name: '服饰箱包'
+						},
+						{
+							src: 'https://image.sqqmall.com/2019/06/04/067bc388fed3584f.png',
+							name: '日用家纺'
+						},
+						{
+							src: 'https://image.sqqmall.com/2019/06/04/8d1d709af3ec6229.png',
+							name: '食品饮料'
+						},
+						{
+							src: 'https://image.sqqmall.com/2019/06/04/7932bf932a6ace22.png',
+							name: '美妆护肤'
+						}
+					],
+					bottom: [
+						{
+							src: 'https://image.sqqmall.com/2019/06/04/e9ee5341c1676663.png',
+							name: '数码办公'
+						},
+						{
+							src: 'https://image.sqqmall.com/2019/06/04/2ceb2f6a426e65de.png',
+							name: '母婴玩具'
+						},
+						{
+							src: 'https://image.sqqmall.com/2019/06/04/55ea7bfcf0683f95.png',
+							name: '运动户外'
+						},
+						{
+							src: 'https://image.sqqmall.com/2019/06/04/56bb478ec9be2e4d.png',
+							name: '钟表首饰'
+						},
+						{
+							src: 'https://image.sqqmall.com/2019/06/04/101a5d02ab4b6279.png',
+							name: '家用电器'
+						}
+					]
+				}
 			}
 		},
 		components:{
@@ -57,30 +131,93 @@
 	}
 </script>
 
-<style lang="less">
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+<style lang="less" scoped>
+	@import url('../../common/theme.less');
+	@import url('//at.alicdn.com/t/font_1355568_bd62srr6i17.css');
+	
+	.header{
+		width: 100%;
+		height: 320upx;
+		background-color: @orange;
+		padding: 30upx 0 200upx 0;
+		position: relative;
+		box-sizing: border-box;
+		.searchbar{
+			width: 620upx;
+			height: 60upx;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			margin: 0 auto;
+			background-color: #FFF;
+			border-radius: 30upx;
+			.iconfont{
+				font-size: 40upx;
+				color: #979797;
+				padding: 0 20upx;
+			}
+			input{
+				display: block;
+				width: 80%;
+				font-size: @font28;
+			}
+		}
+		.swiper-container{
+			width: 90%;
+			position: absolute;
+			top: 110upx;
+			left: 5%;
+			border-radius: @radius-lg;
+			overflow: hidden;
+		}
 	}
-
-	.logo {
-		height: 200upx;
-		width: 200upx;
-		margin-top: 200upx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50upx;
+	
+	.swiper-img{
+		width: 100%;
+		height: 100%;
+		border-radius: @radius-lg;
 	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
+	
+	.cells{
+		width: 100%;
+		background-color: #FFF;
+		padding-top: 100upx;
+		.cells-top,.cells-bottom{
+			width: 100%;
+			padding: 10upx 30upx;
+			box-sizing: border-box;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			.cell{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				image{
+					width: 72upx;
+					height: 72upx;
+					padding: 10upx 0;
+				}
+				text{
+					font-size: @font24;
+					color: #181818;
+				}
+			}
+		}
+		.cells-bottom{
+			border-top: 20upx solid #f8f8f8;
+		}
+		.line{
+			width: 690upx;
+			height: 1upx;
+			background-color: #e2e2e2;
+			margin: 0 auto;
+		}
 	}
-
-	.title {
-		font-size: 36upx;
-		color: #8f8f94;
-	}
+	
+	
+	
+	
+	
 </style>
