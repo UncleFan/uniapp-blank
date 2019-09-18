@@ -80,6 +80,7 @@
         },
         "devServer" : {
             "https" : false
-        }
+        },
+        "title" : "好品购"
     }
 }

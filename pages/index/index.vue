@@ -1,9 +1,8 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png" @tap="toLogin"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
+		<view>{{avatarUrl}}</view>
+		<button type="primary" size="small" @tap="changeToken">获取token: {{tokens}}</button>
+		<button type="warn" size="small" @tap="addAge">增加后的年龄为：{{age}}</button>
 		<Tabbar></Tabbar>
 	</view>
 </template>
@@ -11,6 +10,10 @@
 <script>
 	import { tabbar,getPagesPath } from '../../utils/tabbar' 
 	import Tabbar from '../../components/tabbar'
+	import {  
+	        mapState,  
+	        mapMutations  
+	    } from 'vuex';  
 	export default {
 		data() {
 			return {
@@ -19,6 +22,17 @@
 		},
 		components:{
 			Tabbar
+		},
+		computed:{
+			avatarUrl(){
+				return this.$store.state.avatarUrl
+			},
+			tokens(){
+				return this.$store.state.token
+			},
+			age(){
+				return this.$store.state.age
+			}
 		},
 		onLoad() {
 			getPagesPath()
@@ -31,6 +45,13 @@
 				    animationType: 'pop-in',
 				    animationDuration: 100
 				});
+			},
+			changeToken(){
+				let token = Math.floor(Math.random() * (200000000 - 100000000 + 1) + 100000000);
+				this.$store.dispatch('getToken',token)
+			},
+			addAge(){
+				this.$store.dispatch('addAge')
 			}
 		}
 	}
