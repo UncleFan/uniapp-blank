@@ -1,7 +1,14 @@
 <template name='Navigator'>
 	<view class="navigator">
 		<view v-if="showback" class="backIcon" @tap="navigatorBack">
-			<b class="iconfont icon-xiangzuo"></b>
+			<text class="iconfont icon-xiangzuo" style="font-weight: bold;"></text>
+			<text class="line"></text>
+			<text class="iconfont">返回</text>
+		</view>
+		<view v-else class="backIcon" @tap="switchToIndex">
+			<text class="iconfont icon-shouyex"></text>
+			<text class="line"></text>
+			<text class="iconfont">首页</text>
 		</view>
 		<view class="navigator-name">{{name}}</view>
 	</view>
@@ -31,6 +38,11 @@
 		methods: {
 			navigatorBack(){
 				uni.navigateBack({delta:1})
+			},
+			switchToIndex(){
+				uni.switchTab({
+					url: "/pages/index/index"
+				})
 			}
 		}
 		
@@ -41,7 +53,7 @@
 
 <style lang="less" scoped>
 	@import url('../common/theme.less');
-	@import url('//at.alicdn.com/t/font_1355568_2q9vzas3kwg.css');
+	@import url('//at.alicdn.com/t/font_1355568_jmls8lyqyv.css');
 	
 	.navigator{
 		width: 100%;
@@ -53,20 +65,34 @@
 		align-items: center;
 		position: relative;
 		
-		.iconfont{
-			font-size: @font28;
-			font-weight: bold;
-			color: @028E9B;
-		}
 		.backIcon{
+			width: 150upx;
+			height: 50upx;
 			position: absolute;
 			left: 30upx;
+			border-radius: 25upx;
+			background-color: #f8f8f8;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			padding: 5upx 10upx;
+			color: @028E9B;
+			box-sizing: border-box;
+			.iconfont{
+				font-size: 28upx;
+				line-height: 28upx;
+			}
+			.line{
+				display: block;
+				width: 1upx;
+				height: 24upx;
+				background-color: @028E9B;
+			}
 		}
-		
 	}
 	
 	.navigator-name{
-		font-size: @font28;
+		font-size: 32upx;
 		color: @028E9B;
 	}
 </style>

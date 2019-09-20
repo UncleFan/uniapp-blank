@@ -3,10 +3,10 @@
 		<view class="header">
 			<view class="searchbar">
 				<text class="iconfont icon-sousuo"></text>
-				<input type="text" :value="search" placeholder="输入商品关键词"/>
+				<input type="text" :value="search" placeholder="输入商品关键词" @focus="getSearchFocus"/>
 			</view>
 			<view class="swiper-container">
-				<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="500">
+				<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="500" :circular="true">
 					<swiper-item v-for="(item,index) in swipers" :key="index">
 						<image class="swiper-img" :src="item" ></image>
 					</swiper-item>
@@ -27,6 +27,30 @@
 				</view>
 			</view>
 			<view class="line"></view>
+			<view class="quicknews">
+				<text class="quick-title">神雀快报</text>
+				<view class="quick-tuijain">
+					<image src="../../static/index_recommend.png"></image>
+				</view>
+				<view class="quicknews-swiper">
+					<swiper :indicator-dots="false" :autoplay="true" :interval="3000" :duration="1000" :vertical="true" :circular="true" :touchable="false">
+						<swiper-item v-for="(item,index) in [1,2,3]" :key="index">
+							<view class="swiper-item">{{item}}. 却是省钱很省钱省钱的很却是省钱很省钱省钱的很却是省钱</view>
+						</swiper-item>
+					</swiper>
+				</view>
+				<view class="quicknews-more">
+					<text>更多</text>
+					<text class="iconfont icon-youyou-"></text>
+				</view>
+			</view>
+		</view>
+		<!-- 产品 -->
+		<view class="explosive-products">
+			<!-- 爆品 -->
+			<view class="products">
+				爆品专区
+			</view>
 		</view>
 	</view>
 </template>
@@ -126,6 +150,14 @@
 			},
 			addAge(){
 				this.$store.dispatch('addAge')
+			},
+			getSearchFocus(){
+				console.log('focus')
+				uni.navigateTo({
+				    url: '../search/search',
+				    animationType: 'pop-in',
+				    animationDuration: 100
+				});
 			}
 		}
 	}
@@ -133,7 +165,7 @@
 
 <style lang="less" scoped>
 	@import url('../../common/theme.less');
-	@import url('//at.alicdn.com/t/font_1355568_bd62srr6i17.css');
+	@import url('//at.alicdn.com/t/font_1355568_oxejudbeig.css');
 	
 	.header{
 		width: 100%;
@@ -216,8 +248,64 @@
 		}
 	}
 	
+	.quicknews{
+		width: 690upx;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 25upx 0;
+		.quick-title{
+			display: block;
+			height: @font28;
+			line-height: @font28;
+			font-size: @font28;
+			font-weight: bold;
+			border-right: 1upx solid #999;
+			padding-right: 24upx;
+		}
+		.quick-tuijain{
+			width: 54upx;
+			height: 28upx;
+			image{
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.quicknews-swiper{
+			width: 345upx;
+			height: 40upx;
+			
+			swiper{
+				width: 100%;
+				height: 100%;
+				font-size: @font24;
+				.swiper-item{ .textoverflow }
+				.swiper-item{
+					line-height: 40upx;
+				}
+			}
+		}
+		.quicknews-more{
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			height: @font24;
+			text{
+				display: block;
+				font-size: @font24;
+				color: #9b9b9b;
+				line-height: @font24;
+			}
+		} 
+	}
 	
-	
+	.explosive-products{
+		width: 100%;
+		padding: 0 20upx;
+		background-color: #f3f3f3;
+	}
 	
 	
 </style>

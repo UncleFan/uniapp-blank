@@ -46,8 +46,21 @@
 			Input,
 			Code
 		},
-
 		onLoad(e) {
+			this.showback = e.showback === 'true'?true:false;
+			// // 判断是从什么页面跳转过来
+			// if(!_route || _route.route == 'pages/mine/mine' || _route.route == 'pages/cart/cart'){
+			// 	// 上个页面为购物车或者个人中心 navagatebar显示应是返回主页按钮
+			// 	this.homebtn = true;
+			// }else{
+			// 	// 上个页面存在
+			// 	this.homebtn = false;
+			// }
+			
+			
+			
+			
+			
 			// getPagesPath()
 			/* $http.ReqPost(requestUrl.newsList,{}).then((res) => {
 				// console.log(res)
@@ -85,7 +98,7 @@
 	
 	.login{
 		width: 100%;
-		height: calc(100vh - 50px);
+		height: calc(100vh);
 		background: url('../../static/denglubg.jpg') no-repeat;
 		background-size: cover;
 	}
@@ -145,7 +158,4 @@
 			line-height: 90upx;
 		}
 	}
-
-	
-
 </style>
