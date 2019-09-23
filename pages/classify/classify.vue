@@ -1,6 +1,7 @@
 <template>
 	<view>
 		分类
+		ceshi 
 	</view>
 </template>
 
